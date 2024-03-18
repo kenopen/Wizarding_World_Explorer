@@ -8,10 +8,13 @@ import { SpellsComponent } from './components/spells/spells.component';
 import { ElixirsComponent } from './components/elixirs/elixirs.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HouseDialogComponent } from './components/house-dialog/house-dialog.component';
 
 //Angular Material COmponents
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -20,6 +23,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     SpellsComponent,
     ElixirsComponent,
     ToolbarComponent,
+    HouseDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,6 +32,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatButtonModule,
+    MatDialogModule,
+    MatGridListModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

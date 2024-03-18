@@ -13,4 +13,8 @@ export class HousesService {
   getHouses(): Observable<any> {
     return this.http.get<any>(this.apiUrl);
   }
+
+  getHouseById(id: string): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/${id}`);
+  }
 }

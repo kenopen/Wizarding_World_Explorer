@@ -1,17 +1,10 @@
-<div *ngFor="let house of houses">
-  <h2>{{ house.name }}</h2>
-  <p><strong>House Colours:</strong> {{ house.houseColours }}</p>
-  <p><strong>Founder:</strong> {{ house.founder }}</p>
-  <p><strong>Animal:</strong> {{ house.animal }}</p>
-  <p><strong>Element:</strong> {{ house.element }}</p>
-  <p><strong>Ghost:</strong> {{ house.ghost }}</p>
-  <p><strong>Common Room:</strong> {{ house.commonRoom }}</p>
-  <p><strong>Heads:</strong></p>
-  <ul>
-    <li *ngFor="let head of house.heads">{{ head.firstName }} {{ head.lastName }}</li>
-  </ul>
-  <p><strong>Traits:</strong></p>
-  <ul>
-    <li *ngFor="let trait of house.traits">{{ trait.name }}</li>
-  </ul>
-</div>
+<br><br><br>
+<mat-grid-list cols="4" rowHeight="1:1">
+  <mat-grid-tile class="grid-item" *ngFor="let house of houses" (click)="openDialog(house.id)">
+    <div>
+      <img [src]="getHouseCrestImageUrl(house.name)" alt="{{ house.name }} Crest">
+      <br><br>
+      <button mat-raised-button color="primary">More Info</button>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>

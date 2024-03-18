@@ -5,9 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HousesComponent } from './components/houses/houses.component';
 import { SpellsComponent } from './components/spells/spells.component';
+import { ElixirsComponent } from './components/elixirs/elixirs.component';
 
 @NgModule({
-  declarations: [AppComponent, HousesComponent, SpellsComponent],
+  declarations: [AppComponent, HousesComponent, SpellsComponent, ElixirsComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],

@@ -7,10 +7,11 @@ import { HousesComponent } from './components/houses/houses.component';
 import { SpellsComponent } from './components/spells/spells.component';
 import { ElixirsComponent } from './components/elixirs/elixirs.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent, HousesComponent, SpellsComponent, ElixirsComponent, ToolbarComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

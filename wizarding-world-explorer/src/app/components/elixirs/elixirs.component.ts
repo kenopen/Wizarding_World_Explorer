@@ -32,7 +32,7 @@ export class ElixirsComponent implements OnInit {
         (elixir) => elixir.difficulty === difficulty
       );
     } else {
-      this.filteredElixirs = this.elixirs.slice(); // Show all elixirs if no difficulty is selected
+      this.filteredElixirs = this.elixirs.slice();
     }
 
     // Filter by search value

@@ -15,6 +15,6 @@ export class SpellsService {
   }
 
   getSpellById(spellId: string) {
-    return this.http.get(`${this.apiUrl}/Spells/${spellId}`);
+    return this.http.get(`${this.apiUrl}/${spellId}`);
   }
 }

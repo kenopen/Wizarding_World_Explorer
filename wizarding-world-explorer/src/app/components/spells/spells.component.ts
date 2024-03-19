@@ -76,14 +76,20 @@ export class SpellsComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     this.spellsService.getSpells().subscribe((data: any) => {
       this.filteredSpells = data;
-      this.allSpells.data = data; // Initialize MatTableDataSource
+      this.allSpells.data = data;
     });
   }
 
-  onSpellClicked(spellId: string) {
-    this.spellsService.getSpellById(spellId).subscribe((spellData: any) => {
-      this.expandedSpell = spellData;
-    });
+  onSpellClicked(spellId: string): void {
+    this.spellsService.getSpellById(spellId).subscribe(
+      (spellData: any) => {
+        this.expandedSpell = spellData;
+      },
+      (error: any) => {
+        console.error('Error fetching spell:', error);
+        // TODO: Handle error (display error message to user)
+      }
+    );
   }
 
   applyFilter(searchValue: string, typeValue: string, lightValue: string) {

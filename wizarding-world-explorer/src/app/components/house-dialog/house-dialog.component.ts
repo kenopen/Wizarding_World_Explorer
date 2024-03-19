@@ -36,8 +36,8 @@ export class HouseDialogComponent {
 
   getDialogConfig(): MatDialogConfig {
     const config = new MatDialogConfig();
-    config.width = 'auto'; // Set width to auto
-    config.minHeight = '300px'; // Set minimum height
+    config.width = 'auto';
+    config.minHeight = '300px';
     return config;
   }
 }

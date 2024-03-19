@@ -22,9 +22,9 @@ export class HousesComponent implements OnInit {
 
   openDialog(houseId: string): void {
     this.housesService.getHouseById(houseId).subscribe((houseData: any) => {
-      const config = this.getDialogConfig(); // Get dialog configuration
-      config.data = houseData; // Assign house data to the dialog configuration
-      this.dialog.open(HouseDialogComponent, config); // Open the dialog with the configuration
+      const config = this.getDialogConfig();
+      config.data = houseData;
+      this.dialog.open(HouseDialogComponent, config);
     });
   }
 
@@ -34,8 +34,8 @@ export class HousesComponent implements OnInit {
 
   getDialogConfig(): MatDialogConfig {
     const config = new MatDialogConfig();
-    config.width = 'auto'; // Set width to auto
-    config.minHeight = '300px'; // Set minimum height
+    config.width = 'auto';
+    config.minHeight = '300px';
     return config;
   }
 }

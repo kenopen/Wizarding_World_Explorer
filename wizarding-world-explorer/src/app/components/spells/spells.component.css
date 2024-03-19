@@ -1,0 +1,20 @@
+.container{
+  padding:20px;
+}
+
+tr.spell-detail-row {
+  height: 0;
+}
+
+tr.spell-row:not(.example-expanded-row):hover {
+  background: whitesmoke;
+}
+
+tr.spell-row:not(.example-expanded-row):active {
+  background: #efefef;
+}
+
+.spell-row td {
+  border-bottom-width: 0;
+}
+

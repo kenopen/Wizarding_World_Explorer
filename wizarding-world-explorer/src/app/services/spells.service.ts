@@ -13,4 +13,8 @@ export class SpellsService {
   getSpells(): Observable<any> {
     return this.http.get<any>(this.apiUrl);
   }
+
+  getSpellById(spellId: string) {
+    return this.http.get(`${this.apiUrl}/Spells/${spellId}`);
+  }
 }

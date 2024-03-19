@@ -1,0 +1,25 @@
+<h1 mat-dialog-title>{{ house.name }}</h1>
+<div mat-dialog-content>
+  <div class="dialog-content">
+    <div class="crest">
+      <img [src]="getHouseCrestImageUrl(house.name)" alt="{{ house.name }} Crest">
+    </div>
+    <div class="details">
+      <p><strong>Founder:</strong> {{ house.founder }}</p>
+      <p><strong>Traits:</strong> {{ getTraits(house.traits) }}</p>
+      <p><strong>Notable Members:</strong> {{ getNotableMembers(house.heads) }}</p>
+      <div *ngIf="showMoreInfo">
+        <p><strong>House Colors:</strong> {{ house.houseColours }}</p>
+        <p><strong>House Animal:</strong> {{ house.animal }}</p>
+        <p><strong>Common Room:</strong> {{ house.commonRoom }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div mat-dialog-actions class="dialog-actions">
+  <button mat-button (click)="toggleMoreInfo($event)">
+    {{ showMoreInfo ? 'See Less' : 'See More' }}
+  </button>
+  <span class="spacer"></span>
+  <button mat-button mat-dialog-close>Done</button>
+</div>

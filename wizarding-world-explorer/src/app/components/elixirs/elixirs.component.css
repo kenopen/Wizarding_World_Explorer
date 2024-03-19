@@ -1,0 +1,19 @@
+.container{
+  padding:20px;
+}
+
+tr.elixir-detail-row {
+  height: 0;
+}
+
+tr.elixir-row:not(.example-expanded-row):hover {
+  background: whitesmoke;
+}
+
+tr.elixir-row:not(.example-expanded-row):active {
+  background: #efefef;
+}
+
+.elixir-row td {
+  border-bottom-width: 0;
+}

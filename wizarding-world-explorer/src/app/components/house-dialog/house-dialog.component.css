@@ -1,0 +1,22 @@
+.dialog-content {
+  display: flex;
+  align-items: center;
+}
+
+.crest {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.details {
+  flex: 2;
+}
+
+.dialog-actions {
+  justify-content: flex-end;
+}
+
+/* Allow content to overflow */
+.mat-dialog-content {
+  overflow:visible
+}

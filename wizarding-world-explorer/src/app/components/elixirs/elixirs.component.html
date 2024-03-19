@@ -55,6 +55,14 @@
                 {{ ingredient.name }}
               </li>
             </ul>
+            <p><strong>Contact the following inventors for brewing instructions:</strong></p>
+            <ul *ngIf="elixir.inventors && elixir.inventors.length > 0">
+              <li *ngFor="let inventor of elixir.inventors">
+                {{ inventor.firstName }} {{ inventor.lastName }}
+              </li>
+            </ul>
+            <p *ngIf="!(elixir.inventors && elixir.inventors.length > 0)"><i>No inventors listed</i></p>
+
             <!-- Add more details as needed -->
           </div>
         </td>

@@ -42,6 +42,8 @@ This will compile the application and start a development server. You can then a
 - Add additional tests
 - New features such as favoriting/bookmarking items, quizzes, trivia related to the wizarding world
 - Voice features to teach user how to pronounce spells
+- FAQ page for users
+- Possibly a welcome screen instead of navigating directly to the houses page
 
 ## Developer notes
 

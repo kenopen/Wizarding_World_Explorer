@@ -2,13 +2,13 @@
 
   <!-- Search input -->
   <mat-form-field class="spell-form-field" appearance="outline">
-    <input matInput (keyup)="applyFilter($any($event.target).value || '')" placeholder="Search spell names"/>
+    <input matInput #searchInput (keyup)="applyFilter(searchInput.value, typeSelect.value, lightSelect.value)" placeholder="Search spell names"/>
   </mat-form-field>
   &nbsp;&nbsp;
   <!-- Filter dropdowns -->
   <mat-form-field class="spell-form-field" appearance="outline">
     <mat-label>Type</mat-label>
-    <mat-select (selectionChange)="applyFilter($event.value)">
+    <mat-select #typeSelect (selectionChange)="applyFilter(searchInput.value, typeSelect.value, lightSelect.value)">
       <mat-option value="">Select</mat-option>
       <mat-option *ngFor="let type of spellTypes" [value]="type">{{ type }}</mat-option>
     </mat-select>
@@ -16,11 +16,15 @@
   &nbsp;&nbsp;
   <mat-form-field class="spell-form-field" appearance="outline">
     <mat-label>Light</mat-label>
-    <mat-select (selectionChange)="applyFilter($event.value)">
+    <mat-select #lightSelect (selectionChange)="applyFilter(searchInput.value, typeSelect.value, lightSelect.value)">
       <mat-option value="">Select</mat-option>
       <mat-option *ngFor="let light of spellLights" [value]="light">{{ light }}</mat-option>
     </mat-select>
   </mat-form-field>
+  &nbsp;&nbsp;
+
+  <!-- TODO: Reset filters button -->
+  <!-- <button mat-raised-button color="primary" (click)="resetFilters()">Reset Filters</button> -->
 
   <div class="mat-elevation-z8">
 

@@ -29,6 +29,7 @@ import {
 export class SpellsComponent implements OnInit, AfterViewInit {
   allSpells: MatTableDataSource<any> = new MatTableDataSource<any>();
   expandedSpell: any;
+  filteredSpells: any[] = [];
 
   columnsToDisplay = ['name', 'type', 'effect', 'incantation', 'expand'];
   columnsToDisplayWithExpand = [...this.columnsToDisplay];
@@ -74,6 +75,7 @@ export class SpellsComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.spellsService.getSpells().subscribe((data: any) => {
+      this.filteredSpells = data;
       this.allSpells.data = data; // Initialize MatTableDataSource
     });
   }
@@ -84,17 +86,34 @@ export class SpellsComponent implements OnInit, AfterViewInit {
     });
   }
 
-  applyFilter(value: string | undefined) {
-    if (!value) {
-      // If the filter value is undefined, show all spells
-      this.allSpells.filter = '';
-      return;
+  applyFilter(searchValue: string, typeValue: string, lightValue: string) {
+    searchValue = searchValue ? searchValue.trim().toLowerCase() : '';
+
+    // Filter by search input
+    this.filteredSpells = this.allSpells.data.filter(
+      (spell: any) =>
+        spell.name.toLowerCase().includes(searchValue) ||
+        spell.effect.toLowerCase().includes(searchValue)
+    );
+
+    // Filter by type dropdown
+    if (typeValue && typeValue !== '') {
+      this.filteredSpells = this.filteredSpells.filter(
+        (spell: any) => spell.type.toLowerCase() === typeValue.toLowerCase()
+      );
     }
 
-    // Trim whitespace from the filter value
-    value = value.trim().toLowerCase();
+    // Filter by light dropdown
+    if (lightValue && lightValue !== '') {
+      this.filteredSpells = this.filteredSpells.filter(
+        (spell: any) => spell.light.toLowerCase() === lightValue.toLowerCase()
+      );
+    }
 
-    // Apply the filter
-    this.allSpells.filter = value;
+    // Update the displayed data
+    this.allSpells.filter = '';
+    this.allSpells.data = this.filteredSpells;
   }
+
+  //TODO: Add reset filters button code
 }

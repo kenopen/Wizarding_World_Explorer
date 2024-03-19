@@ -44,8 +44,12 @@ This will compile the application and start a development server. You can then a
 - Voice features to teach user how to pronounce spells
 - FAQ page for users
 - Possibly a welcome screen instead of navigating directly to the houses page
+- Implement lazy loading instead of paging
+- Add spell images, and include caching for these (images should be linked to API)
+- Add photos of inventors and notable wizards
 
 ## Developer notes
 
 - API requires brewing instructions
 - API require pronunciation of spells
+- Photo urls of elixirs, spells, inventors and notable wizards should be included in API

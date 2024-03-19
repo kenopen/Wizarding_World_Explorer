@@ -33,3 +33,17 @@ This will compile the application and start a development server. You can then a
 
 - This application uses Angular Material for UI components.
 - Data is fetched from a backend API. Ensure that the API server is running and accessible for the application to fetch data.
+
+## Developer TODOs
+
+- Improve layout for Houses component
+- Add headings to component pages
+- Improve overall look and feel (colours etc) of UI
+- Add additional tests
+- New features such as favoriting/bookmarking items, quizzes, trivia related to the wizarding world
+- Voice features to teach user how to pronounce spells
+
+## Developer notes
+
+- API requires brewing instructions
+- API require pronunciation of spells
